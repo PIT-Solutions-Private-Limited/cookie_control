@@ -1,0 +1,28 @@
+﻿.. |img-3|      image:: /Images/1.png
+   :height: 400
+   :width: 250
+.. :align: left
+.. :border: 0
+.. :name: Image1
+
+.. |img-4|      image:: /Images/2.png
+   :height: 400
+   :width: 250
+.. :align: left
+.. :border: 0
+.. :name: Image2
+
+.. |img-5|      image:: /Images/3.png
+   :height: 450
+   :width: 500
+.. :align: left
+.. :border: 0
+.. :name: Backend view
+
+.. |img-6|      image:: /Images/backend2.png
+   :height: 450
+   :width: 500
+.. :align: left
+.. :border: 0
+.. :name: Backend view
+
