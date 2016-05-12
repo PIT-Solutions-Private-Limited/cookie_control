@@ -15,9 +15,24 @@ jQuery(document).ready(function(){
                          })
                      },
                      success: function(data) {
-                        //alert(data);
-                     	CookieControl.reset();
-                     	setTimeout(function(){window.location.reload()}, 500);
+                      if(data == 2){ /*condition added on 02-05-2016*/
+                     	/*CookieControl.reset();*/                       
+                        if(CookieControl.options.consentModel == "implicit"){
+                            res=CookieControl.reset_custom(); 
+                            if(res)
+                            {    
+                                CookieControl.setCookie(CookieControl.options.cookieName, "no");                                                     
+                                setTimeout(function(){location.reload(true)}, 2000);
+                                
+                           }
+                        }
+                        else
+                        {
+                           CookieControl.reset(); 
+                           setTimeout(function(){location.reload(true)}, 2000);
+                        }                       
+                     	
+                        }
                      }
              });
     			
@@ -33,7 +48,11 @@ jQuery(document).ready(function(){
                              })
                      },
                      success: function(data) {
+ 			 if(data == 1){ /* //Condition and reload added on 02-05-2016*/
+                            //setTimeout(function(){window.location.reload()}, 800);
+                            setTimeout(function(){location.reload()}.bind(this), 2000);
  						//alert(data);
+                        }
                      }
              });
     		 }

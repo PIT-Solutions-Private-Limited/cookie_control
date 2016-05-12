@@ -37,12 +37,18 @@ class CookiecontrolRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      * @param $args
      */
     public function getfileIdentifier($args) {
-        $sql = "SELECT sys_file.identifier FROM `sys_file`
-                
+       /* $sql = "SELECT sys_file.identifier FROM `sys_file`        
                 WHERE sys_file.`uid`=$args";
+        $result = $GLOBALS['TYPO3_DB']->sql_query($sql);*/
 
+        $select_fields='sys_file.identifier';
+        $from_table='sys_file';
+        $where_clause='sys_file.`uid`='.$args;
+        $groupBy='';
+        $orderBy='';
+        $limit='';
 
-        $result = $GLOBALS['TYPO3_DB']->sql_query($sql);
+$result = $GLOBALS['TYPO3_DB']->exec_SELECTquery($select_fields,$from_table,$where_clause,$groupBy,$orderBy,$limit);
 
         $final = array();
        

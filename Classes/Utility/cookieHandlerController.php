@@ -22,7 +22,7 @@ class CookieHandlerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCo
 						$_SESSION['disable_session'] = FALSE;
 						//\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($_SESSION['disable_session']);
 						//$objectManager->setKey("ses","disable_session",FALSE);
-						
+						echo 1; /* Added on 02-05-2016*/
 					}
 					if($_REQUEST['parameters']['in'] == 2){ 
 						 $_SESSION['disable_session'] = TRUE;
@@ -43,8 +43,7 @@ class CookieHandlerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCo
 								}
 							}
 						}/**/
-
-						
+						echo 2; /* Added on 02-05-2016 */
 					}
 /**/
 				//return;
